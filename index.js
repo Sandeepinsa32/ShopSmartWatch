@@ -1,16 +1,21 @@
+
 var imgLogo=document.getElementById('fitbit-image-logo');
 var img=document.getElementById('fitbit-image');
 var imgScreen=document.getElementById('fitbit-screenImg');
+var fitScreen=document.getElementById('fitbit-screen');
+
 var skinPink=document.getElementById('skin-pink');
 var skinBrown=document.getElementById('skin-brown');
 var skinBlack=document.getElementById('skin-black');
 var skinOrange=document.getElementById('skin-orange');
+
 var timeBtn=document.getElementById('time-btn');
 var heartBtn=document.getElementById('heart-btn');
 var glocBtn=document.getElementById('gloc-btn');
 var andoBtn=document.getElementById('ando-btn');
 var buyBtn=document.getElementById('buy-btn');
-var fitScreen=document.getElementById('fitbit-screen');
+
+
 // console.log(skinPink);
 // console.log(skinBrown);
 // console.log(skinBlack);
@@ -47,6 +52,7 @@ timeBtn.addEventListener('click', function(){
 		imgScreen.src="";
 		document.getElementById('heartRate').style.display = 'none';
 		document.getElementById('timetext').style.display = 'block';
+		document.getElementById('fitbit-screenImg').style.animation= '';
 		time();
 
 
@@ -57,6 +63,8 @@ heartBtn.addEventListener('click', function(){
 					imgScreen.src="heart.svg";
 					document.getElementById('timetext').style.display = 'none';
 					document.getElementById('heartRate').style.display = 'block';
+					document.getElementById('fitbit-screenImg').style.animation= 'heart 0.5s linear infinite';
+
 					//document.getElementById('fitbit-screen').innerHTML = time_str;
 });
 
@@ -67,6 +75,7 @@ glocBtn.addEventListener('click', function(){
 			//	document.getElementById('fitbit-screen').innerHTML = ;
 			document.getElementById('timetext').style.display = 'none';
 			document.getElementById('heartRate').style.display = 'none';
+			document.getElementById('fitbit-screenImg').style.animation= '';
 			imgScreen.src="gloc.svg";
 
 });
@@ -75,6 +84,7 @@ andoBtn.addEventListener('click', function(){
 		//alert("andoBtn");
 		document.getElementById('timetext').style.display = 'none';
 		document.getElementById('heartRate').style.display = 'none';
+		document.getElementById('fitbit-screenImg').style.animation= '';
 		imgScreen.src="ando.svg";
 });
 
