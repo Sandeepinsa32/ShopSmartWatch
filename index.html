@@ -7,6 +7,7 @@
 		<title>Fit-Bit_SmartWacth|Shopping_Portal.com</title>
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="shortcut icon" href="png/logo.png">
 	</head>
 	<body >
@@ -27,34 +28,40 @@
 		
 		<div class=" main container-fluid">
 			<div class="row">
-				<div class="col-md-4 col-sm-2">
+				<div class="col-xs-12 col-sm-4">
 					<img src="png/fit_band_pink.png" alt="fit_bit" id="fitbit-image" class="fitbit-img" >
 					<span class="fitbit-screen" id="fitbit-screen">
+						<p id="timetext" ></p>
 						<img src="" alt="" id="fitbit-screenImg">
+								<p class="heart-rate" id="heartRate">72</p>
+						
+						
+						
+						
 					</span>
 
-					<button type="" id="buy-btn" class=" btn btn-warning" style="margin-left: 165px; margin-top: -50px;">Buy Now</button>
-				</div>
-				<div class="col-md-8">
+									</div>
+				<div class="col-xs-12 col-sm-8">
 					<h3 class="txt">Gear OS 2-Works on Android and iPhone</h3>
 					<p class="padding">Wear OS by Gogle works with phones running Android 6.0+ (excluding Go edition) or iOS 10.0+</p>
 					<p class="padding" >Select color</p>
 					
 					<div class="padding color">
 						
-						<span id="skin-pink"></span>
-						<span id="skin-brown"></span>
-						<span id="skin-black"></span>
-						<span id="skin-orange"></span>
+						<span id="skin-pink" class="skin"></span>
+						<span id="skin-brown" class="skin"></span>
+						<span id="skin-black" class="skin"></span>
+						<span id="skin-orange" class="skin"></span>
 					</div>
 					<p class="padding" style="clear: both; padding-top: 20px;">Features</p>
 					
 					<button type="" id="time-btn" class=" btn btn-light margin-btn" >Time</button>
 					<button type="" id="heart-btn" class=" btn btn-light">Heart rate</button>
-					<button type="" id="gloc-btn" class=" btn btn-light">Geolaction</button>
-					<button type="" id="ando-btn" class=" btn btn-light">Android</button>
+					<button type="" id="gloc-btn" class=" btn btn-light marg-btn">Geolaction</button>
+					<button type="" id="ando-btn" class=" btn btn-light  ">Android</button>
 					<br>
-					<p id="hear" ></p>
+					<button type="" id="buy-btn" class=" btn btn-warning mt-3 margin-btn" >Buy Now</button>
+
 				</div>
 			</div>
 		</div>

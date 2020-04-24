@@ -44,27 +44,38 @@ skinOrange.addEventListener('click', function(){
 
 timeBtn.addEventListener('click', function(){
 		//alert(timeBtn);
+		imgScreen.src="";
+		document.getElementById('heartRate').style.display = 'none';
+		document.getElementById('timetext').style.display = 'block';
 		time();
+
+
 });
 
 heartBtn.addEventListener('click', function(){
 					//var displayStyle=window.getComputedStyle(fitScreen).backgroundImage;
-					imgScreen.src="heart.svg"
+					imgScreen.src="heart.svg";
+					document.getElementById('timetext').style.display = 'none';
+					document.getElementById('heartRate').style.display = 'block';
 					//document.getElementById('fitbit-screen').innerHTML = time_str;
 });
 
 glocBtn.addEventListener('click', function(){
 			//alert("gloc");
-			var displayStyle=imgScreen.src
-			console.log(displayStyle);
+			// var displayStyle=imgScreen.src
+			// console.log(displayStyle);
 			//	document.getElementById('fitbit-screen').innerHTML = ;
-			imgScreen.src="gloc.svg"
+			document.getElementById('timetext').style.display = 'none';
+			document.getElementById('heartRate').style.display = 'none';
+			imgScreen.src="gloc.svg";
 
 });
 
 andoBtn.addEventListener('click', function(){
 		//alert("andoBtn");
-		imgScreen.src="ando.svg"
+		document.getElementById('timetext').style.display = 'none';
+		document.getElementById('heartRate').style.display = 'none';
+		imgScreen.src="ando.svg";
 });
 
 buyBtn.addEventListener('click', function(){
@@ -88,7 +99,7 @@ time_str   = (hours>12) ? [(hours-12), //otherwise: what's the use of AM/PM?
 (seconds < 10 ? "0" + seconds : seconds)]
 .join(":") + ampm ;
 
-document.getElementById('fitbit-screen').innerHTML = time_str;
+document.getElementById('timetext').innerHTML = time_str;
 setTimeout(time,1000);
 return time_str;
 }
