@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Fit-Bit_19_SmartWacth|Shopping_Portal.com</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-
-</head>
-<body >
-<section class="header">
-		<div class="container">
-		 	<img src="png/logo.png" class="logo">
-		 	<span class="logo_text">Shoping Portal</span>
-		 	<div class="input-group">
-			<input type="text" name="" class="form-control" placeholder="search">
-				<div class="input-group-append">
-					<button type="submit" class="input-group-text btn">Search</button>					
-				</div>			
-		</div>
-		 	<button type="button" class="login-btn">Login</button>
- 		</div>
-						
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fit-Bit_SmartWacth|Shopping_Portal.com</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<link rel="shortcut icon" href="png/logo.png">
+	</head>
+	<body >
 		
-	</section>
-
-
-
-
-		<div class=" main container">
+		<div class="container header">
+			<img src="png/fit_band_pink.png" id="fitbit-image-logo" class="logo">
+			<span class="logo_text">GearOS</span>
+			<!-- <div class="input-group">
+					<input type="text" name="" class="form-control" placeholder="search">
+					<div class="input-group-append">
+							<button type="submit" class="input-group-text btn">Search</button>
+					</div>
+			</div> -->
+			<button type="button" class="login-btn">Login</button>
+		</div>
+		
+		
+		
+		<div class=" main container-fluid">
 			<div class="row">
-				<div class="col-md-4">	
-					<img src="png/fit_band_pink.png" alt="fit_bit" class="fitbit" >
+				<div class="col-md-4 col-sm-2">
+					<img src="png/fit_band_pink.png" alt="fit_bit" id="fitbit-image" class="fitbit-img" >
+					<span class="fitbit-screen" id="fitbit-screen">
+						<img src="" alt="" id="fitbit-screenImg">
+					</span>
+
+					<button type="" id="buy-btn" class=" btn btn-warning" style="margin-left: 165px; margin-top: -50px;">Buy Now</button>
 				</div>
-				<div class="col-md-8">	
-					<h3 class="txt">Fit-Bit v2.0-New Era of Smart Watch</h3>
-					<p class="padding">Elegent Smart Watch with Perfect Desgin,Shape And Water Resistvity up to 1.2nm</p>
+				<div class="col-md-8">
+					<h3 class="txt">Gear OS 2-Works on Android and iPhone</h3>
+					<p class="padding">Wear OS by Gogle works with phones running Android 6.0+ (excluding Go edition) or iOS 10.0+</p>
 					<p class="padding" >Select color</p>
-
-					<ul class="padding">
-						
-						<li class="color-1"></li>
-						<li class="color-2"></li>
-						<li class="color-3"></li>
-						<li class="color-4"></li>
-					</ul>
-
-					<p class="" >Features</p>
 					
+					<div class="padding color">
+						
+						<span id="skin-pink"></span>
+						<span id="skin-brown"></span>
+						<span id="skin-black"></span>
+						<span id="skin-orange"></span>
+					</div>
+					<p class="padding" style="clear: both; padding-top: 20px;">Features</p>
+					
+					<button type="" id="time-btn" class=" btn btn-light margin-btn" >Time</button>
+					<button type="" id="heart-btn" class=" btn btn-light">Heart rate</button>
+					<button type="" id="gloc-btn" class=" btn btn-light">Geolaction</button>
+					<button type="" id="ando-btn" class=" btn btn-light">Android</button>
+					<br>
+					<p id="hear" ></p>
 				</div>
 			</div>
 		</div>
-	
-
-
-
-
-
-
-<script type="text/javascript" src="index.js "></script>	
-</body>
+		
+		<script type="text/javascript" src="index.js "></script>
+	</body>
 </html>

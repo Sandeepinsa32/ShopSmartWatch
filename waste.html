@@ -1,0 +1,284 @@
+var colorRed = document.getElementById('red');
+var colorPurple = document.getElementById('purple');
+var colorBlack = document.getElementById('black');
+var colorBlue = document.getElementById('blue');
+var colorPink = document.getElementById('pink');
+var image = document.getElementById('image');
+
+var time = document.getElementById('button1');
+var heart = document.getElementById('button2');
+
+var timeText = document.getElementById('timetext');
+var heart1 = document.getElementById('heart1');
+
+
+
+//color change section
+colorPurple.addEventListener('click', function(){
+    image.src="https://i.imgur.com/xSIK4M8.png";
+});
+colorRed.addEventListener('click', function(){
+    image.src="https://i.imgur.com/PTgQlim.png";
+});
+colorBlack.addEventListener('click', function(){
+    image.src="https://i.imgur.com/iOeUBV7.png";
+});
+colorBlue.addEventListener('click', function(){
+    image.src="https://i.imgur.com/Mplj1YR.png";
+});
+colorPink.addEventListener('click', function(){
+    image.src="https://i.imgur.com/Zygu7I3.png";
+});
+
+
+
+//inside watch change events
+time.addEventListener('click', function(){
+    heart1.style.display = "none";
+    timeText.style.display = "block";
+});
+heart.addEventListener('click', function(){
+    timeText.style.display = "none";
+    heart1.style.display = "block";
+});
+
+
+
+//time increment
+setInterval(function(){
+    if( timeText.innerHTML.slice(-2)=='59' ){
+        var str = timeText.innerHTML.split('');
+        str[6] = '0';
+        str[7] = '0';
+        timeText.innerHTML = str.join('');
+        timeText.innerHTML = timeText.innerHTML.slice(0,3) + (parseInt(timeText.innerHTML.slice(3,5)) + 1) + timeText.innerHTML.slice(-3);
+    }
+    if(timeText.innerHTML.slice(7)=='9'){
+        var str = timeText.innerHTML.split('');
+        str[7] = '0';
+        str[6] = parseInt(str[6]) + 1;
+        timeText.innerHTML = str.join('');
+    }
+    if(timeText.innerHTML.slice(-2)!='59' && timeText.innerHTML.slice(-1)!='9') {
+        timeText.innerHTML = timeText.innerHTML.slice(0,-1) + (parseInt(timeText.innerHTML.slice(-1)) + 1);
+    }
+},1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+}
+#header {
+    background-color: black;
+    height: 60px;
+    text-align: center;
+}
+#header i {
+    color: white;
+    font-size: 60px;
+}
+section {
+    display: flex;
+    flex-direction: row;
+}
+#section1 img {
+    width: 35vw;
+    height: 500px;
+    margin-top: 50px;
+}
+#timetext {
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    top: 330px;
+    left: 17.5vw;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+}
+#heart1 {
+    display: none;
+    position: absolute;
+    font-size: 30px;
+    top: 330px;
+    left: 17.5vw;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 1;
+    text-align: center;
+}
+#heart1 i {
+    color: red;
+    transform: scale(2);
+}
+#heart1 i:hover {
+    animation: heart 1s alternate infinity;
+}
+@keyframes heart {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+    }
+}
+#section2 {
+    width: 65vw;
+    padding-top: 50px;
+}
+#section2 h1 {
+    font-size: 40px;
+}
+#section2 p {
+    font-size: 18px;
+    color: grey;
+    line-height: 0.2;
+}
+#section2>p:last-of-type {
+    padding-bottom: 20px;
+}
+#colors {
+    display: flex;
+    flex-direction: row;
+}
+.pa {
+    width: 30px;
+    height: 30px;
+    padding: 0px 10px;
+    margin: 0px 10px 20px 10px;
+    border-radius: 5px;
+}
+#colors p:first-of-type {
+    background-color: purple;
+}
+#colors p:nth-of-type(2) {
+    background-color: black;
+}
+#colors p:nth-of-type(3) {
+    background-color: blue;
+}
+#colors p:nth-of-type(4) {
+    background-color: pink;
+}
+#colors p:last-of-type {
+    background-color: red;
+}
+#buttons button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#section2>button {
+    padding: 15px 40px;
+    background-color: gold;
+    margin-top: 40px;
+    margin-left: 5px;
+    border-radius: 7px;
+    outline: none;
+}
+@media screen and (max-width: 760px){
+    section {
+        flex-direction: column;
+    }
+    #text {
+        width: 100vw;
+        text-align: center;
+    }
+    #timetext {
+        left: 50vw;
+        transform: translateX(-50%);
+        font-size: 20px;
+    }
+    #section1 img {
+        width: 65vw;
+        height: 500px;
+        margin-top: 50px;
+    }
+    #heart1 {
+        font-size: 20px;
+        top: 330px;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+    #section2 {
+        width: 100vw;
+        padding-left: 10px;
+    }
+    #section2 h1 {
+        font-size: 30px;
+    }
+    #section2 p {
+        font-size: 15px;
+        color: grey;
+        line-height: 0.7;
+    }
+}
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>SmartWatch</title>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <header id="header">
+            <i class="fab fa-cc-amazon-pay"></i>
+        </header>
+
+        <section>
+            <div id="text">
+                <div id="section1"><img id="image" src="https://i.imgur.com/PTgQlim.png"></div>
+                <p id="timetext">22:49:55</p>
+                <div id="heart1">
+                    <i class="fas fa-heartbeat"></i>
+                    <p>72</p>
+                </div>
+            </div>
+            <div id="section2">
+                <h1>FitBit 19 - The Smartest Watch</h1>
+                <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor </p>
+                <p>Lorem ipsum dolor Lorem ipsum dolor </p>
+                <h2>Select Color</h2>
+                <div id="colors">
+                    <p id="purple" class="pa"></p>
+                    <p id="black" class="pa"></p>
+                    <p id="blue" class="pa"></p>
+                    <p id="pink" class="pa"></p>
+                    <p id="red" class="pa"></p>
+                </div>
+                <h2>Features</h2>
+                <div id="buttons">
+                    <button id="button1">Time</button>
+                    <button id="button2">Heart Rate</button>
+                </div>
+                <button>Buy Now</button>
+            </div>
+        </section>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
